@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Tag The Bus</string>
+    <color name="white">#FFFFFF</color>
+    <string name="loading">loading</string>
+    <string name="validate">valider</string>
+    <string name="title">Titre de la photo</string>
+    <string name="titleNotEnter">Titre non rentré</string>
+    <string name="photoNotSave">Photo non sauvegardé</string>
+    <string name="photoNotTake">Photo non prise</string>
+    <string name="delete">Supprimer</string>
+    <string name="deletePhoto">Suppression de la photo</string>
+    <string name="photoNotDelete">Photo non supprimer</string>
+    <string name="noConnection">Pas de Connection Internet</string>
+
+</resources>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical" android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:weightSum="1">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="53dp"
+                  android:weightSum="1"
+                  android:clickable="true"
+                  android:id="@+id/conteneurBus">
+
+            <TextView
+                android:id="@+id/nomDeLaZone"
+                android:layout_width="287dp"
+                android:layout_height="match_parent"
+                android:textSize="20dp"
+                android:clickable="false"
+                android:maxLength="200"
+                android:ellipsize="end"
+                android:layout_gravity="left"
+                android:layout_weight="0.90"/>
+
+        <ImageView
+            android:id="@+id/flecheDroite"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:src="@drawable/ic_trending_flat_black_24dp"
+            android:layout_width="30dp"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+    <View
+        android:id="@+id/delimitation"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@android:color/white"
+
+        />
+</LinearLayout>
