@@ -51,12 +51,15 @@ public class SetTitle extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(!titre.getText().toString().equals("")) {
-                    saveToInternalStorage(imageBitmap,ligne.getStreet_name(), titre.getText().toString());
-                    Intent returnIntent = new Intent();
-                    returnIntent.putExtra("result",imageBitmap);
-                    returnIntent.putExtra("titre",titre.getText()+".png");
-                    setResult(Activity.RESULT_OK, returnIntent);
-                    finish();
+                    if(saveToInternalStorage(imageBitmap,ligne.getStreet_name(), titre.getText().toString())) {
+                        Intent returnIntent = new Intent();
+                        returnIntent.putExtra("result", imageBitmap);
+                        returnIntent.putExtra("titre", titre.getText() + ".png");
+                        setResult(Activity.RESULT_OK, returnIntent);
+                        finish();
+                    }else{
+                        Toast.makeText(SetTitle.this, getString(R.string.doubleTitle), Toast.LENGTH_LONG).show();
+                    }
                 } else {
                     Toast.makeText(SetTitle.this, getString(R.string.titleNotEnter), Toast.LENGTH_LONG).show();
                  }
@@ -90,15 +93,18 @@ public class SetTitle extends AppCompatActivity {
      *      the path we ant to save given by streetName
      * @param title
      *      The title of the photo
-     * @return
+     * @return true if it sucees
+     *          false otherwise
      */
-    private void saveToInternalStorage(Bitmap bitmapImage, String rue, String title){
+    private boolean saveToInternalStorage(Bitmap bitmapImage, String rue, String title){
         ContextWrapper cw = new ContextWrapper(getApplicationContext());
         // path to /data/data/yourapp/app_data/imageDir
         File directory = cw.getDir(rue, Context.MODE_PRIVATE);
         // Create imageDir
         File mypath=new File(directory,title+".jpg");
-
+        if(mypath.exists()){
+            return false;
+        }
         FileOutputStream fos = null;
         try {
             fos = new FileOutputStream(mypath);
@@ -113,5 +119,6 @@ public class SetTitle extends AppCompatActivity {
                 e.printStackTrace();
             }
         }
+        return true;
     }
 }

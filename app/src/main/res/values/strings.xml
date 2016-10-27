@@ -11,5 +11,6 @@
     <string name="deletePhoto">Suppression de la photo</string>
     <string name="photoNotDelete">Photo non supprimer</string>
     <string name="noConnection">Pas de Connection Internet</string>
+    <string name="doubleTitle">Titre déja utilisé</string>
 
 </resources>
