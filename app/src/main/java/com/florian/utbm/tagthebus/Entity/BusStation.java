@@ -3,16 +3,31 @@ package com.florian.utbm.tagthebus.Entity;
 import java.io.Serializable;
 
 /**
+ * Bus Station reprsente a bus station given by the rest API
+ * at "http://barcelonaapi.marcpous.com/bus/nearstation/latlon/41.3985182/2.1917991/1.json"
  * Created by Florian on 22/10/2016.
  */
 
 public class BusStation implements Serializable{
-
+    /**
+     * Identify the Station
+     */
     private long id;
+    /**
+     * The name og the street
+     */
     private String street_name;
+    /**
+     * Name og the city
+     */
     private String city;
-
+    /**
+     * The latitude of the BusStation
+     */
     private float lat;
+    /**
+     * The longitude of the bus station
+     */
     private float longi;
     private String furniture;
     private String buse;

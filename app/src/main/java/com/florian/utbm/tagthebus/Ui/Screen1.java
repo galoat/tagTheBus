@@ -71,8 +71,7 @@ public class Screen1 extends AppCompatActivity implements GetElementsImplementat
 
         if(isOnline()) {
             // Call a async Task to get the JSONObject inside the API
-            GetElements task = new GetElements(Screen1.this);
-            task.execute("http://barcelonaapi.marcpous.com/bus/nearstation/latlon/41.3985182/2.1917991/1.json");
+            networkAvailable();
         }else{
             Toast.makeText(Screen1.this,R.string.noConnection,Toast.LENGTH_SHORT).show();
             // Set the screen to no connection
